@@ -28,14 +28,12 @@ body {
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.425);
   border-radius: 10px;
-  display: none;
 }
 
 #current-day-div {
   border: solid 1px black;
   margin-top: 20px;
   border-radius: 10px;
-  display: none;
 }
 
 #current-day-div h2 {

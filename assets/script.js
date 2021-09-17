@@ -27,17 +27,21 @@ function ajaxGetWeather(city) {
     var currentWeatherQuery = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=b5b0893f5fb9ef23b8f5462f2201815e`;
     var fiveDayWeatherQuery = `https://api.openweathermap.org/data/2.5/forecast?q=${city},3166&APPID=b5b0893f5fb9ef23b8f5462f2201815e`;
 
-    //Creating first AJAX call to get the current city weather attributes
-    $.ajax({
-      url: currentWeatherQuery,
-      method: "GET",
-    })
-      .then(function (response) {
-        // Moment JS for current date
-        var getDate = moment();
-        var todaysDate = getDate.format("MM/DD/YYYY");
-        var getDay = moment();
-        var currentDay = getDay.format("dddd");
+    //Creating fetch
+    fetch(currentWeatherQuery)
+    .then(function (response) {
+       return response.json();
+    });
+    .then(function(data){
+      console.log(data)
+    });
+  }
+};
+    
+
+
+/*
+        
 
         // Kelvin to Fahrenheit conversion
         var temp = Math.round(((response.main.temp - 273.15) * 9) / 5 + 32);
