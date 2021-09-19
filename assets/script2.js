@@ -37,7 +37,7 @@ document.getElementById("btnSearchCity").addEventListener("click", function () {
       cityName.textContent = data.name + " " + todaysDate;
       humidity.textContent = "Humidity= " + data.main.humidity;
       windSpeed.textContent = "Wind Speed= " + data.wind.speed;
-      temp.textContent = "Current Temp= " + data.main.temp;
+      temp.textContent = "Current Temp= " + data.main.temp + "°F ";
       cityName.innerHTML = `${data.name} - (${todaysDate}) <span><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"></span>`;
     });
 
@@ -89,5 +89,22 @@ document.getElementById("btnSearchCity").addEventListener("click", function () {
       document.getElementById("dateDay5").innerText = `${
         date5.getMonth() + 1
       }/${date5.getDate()}/${date5.getFullYear()}`;
+
+      // Displaying icons
+      document.getElementById(
+        "iconDay1"
+      ).src = `https://openweathermap.org/img/wn/${data.list[2].weather[0].icon}@2x.png`;
+      document.getElementById(
+        "iconDay2"
+      ).src = `https://openweathermap.org/img/wn/${data.list[10].weather[0].icon}@2x.png`;
+      document.getElementById(
+        "iconDay3"
+      ).src = `https://openweathermap.org/img/wn/${data.list[18].weather[0].icon}@2x.png`;
+      document.getElementById(
+        "iconDay4"
+      ).src = `https://openweathermap.org/img/wn/${data.list[26].weather[0].icon}@2x.png`;
+      document.getElementById(
+        "iconDay5"
+      ).src = `https://openweathermap.org/img/wn/${data.list[34].weather[0].icon}@2x.png`;
     });
 });
