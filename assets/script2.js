@@ -65,5 +65,29 @@ document.getElementById("btnSearchCity").addEventListener("click", function () {
       document.getElementById(
         "tempDay5"
       ).innerHTML = `Temp: ${data.list[34].main.temp} <span>&#8457;</span>`;
+
+      // Dates in variables
+      var date1 = new Date(data.list[2].dt_txt);
+      var date2 = new Date(data.list[10].dt_txt);
+      var date3 = new Date(data.list[18].dt_txt);
+      var date4 = new Date(data.list[26].dt_txt);
+      var date5 = new Date(data.list[34].dt_txt);
+
+      // Displaying five day dates using getMonth/getDate/getFullYear methods
+      document.getElementById("dateDay1").innerText = `${
+        date1.getMonth() + 1
+      }/${date1.getDate()}/${date1.getFullYear()}`;
+      document.getElementById("dateDay2").innerText = `${
+        date2.getMonth() + 1
+      }/${date2.getDate()}/${date2.getFullYear()}`;
+      document.getElementById("dateDay3").innerText = `${
+        date3.getMonth() + 1
+      }/${date3.getDate()}/${date3.getFullYear()}`;
+      document.getElementById("dateDay4").innerText = `${
+        date4.getMonth() + 1
+      }/${date4.getDate()}/${date4.getFullYear()}`;
+      document.getElementById("dateDay5").innerText = `${
+        date5.getMonth() + 1
+      }/${date5.getDate()}/${date5.getFullYear()}`;
     });
 });
