@@ -14,6 +14,7 @@ document.getElementById("btnSearchCity").addEventListener("click", function () {
     textCity +
     `,3166&units=imperial&APPID=` +
     apiKey;
+
   var cityName = document.getElementById("cityName");
   var humidity = document.getElementById("current-humidity");
   var windSpeed = document.getElementById("current-windSpeed");
@@ -106,5 +107,22 @@ document.getElementById("btnSearchCity").addEventListener("click", function () {
       document.getElementById(
         "iconDay5"
       ).src = `https://openweathermap.org/img/wn/${data.list[34].weather[0].icon}@2x.png`;
+
+      // Displaying five day humidity
+      document.getElementById(
+        "humDay1"
+      ).innerHTML = `Humidity: ${data.list[2].main.humidity}%`;
+      document.getElementById(
+        "humDay2"
+      ).innerHTML = `Humidity: ${data.list[10].main.humidity}%`;
+      document.getElementById(
+        "humDay3"
+      ).innerHTML = `Humidity: ${data.list[18].main.humidity}%`;
+      document.getElementById(
+        "humDay4"
+      ).innerHTML = `Humidity: ${data.list[26].main.humidity}%`;
+      document.getElementById(
+        "humDay5"
+      ).innerHTML = `Humidity: ${data.list[34].main.humidity}%`;
     });
 });
